@@ -3,7 +3,7 @@ import './form.css';
 
 const Prepform = (props) => {
     const { submit, errors, change } = props;
-    const { username, substitute, topping, sauce} = props.values
+    const { substitute, veggie, carb} = props.values
     
     const onChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -19,56 +19,49 @@ const Prepform = (props) => {
     return (
         <div className="container" id="prep-form">
             <form onSubmit={onSubmit}>
-                <p>{errors.username}</p>
-                <label> Name
-                    <input id="name-input"
-                        placeholder="Input Name Here!"
-                        type="text"
-                        name="username"
-                        value={username}
-                        onChange={onChange}
-                    />
-                </label>
-                <label for='size-select'>
-                    <h3>Choice of Size</h3>
+                <label for='protein-select'>
+                    <h3>Choice of Protein</h3>
                     <p>Required</p>
-                    <select name='size' id='size-dropdown' onChange={onChange}>
+                    <select name='protein' id='protein-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
+                        <option value="chicken">Chicken</option>
+                        <option value="beef">Lean Ground Beef</option>
+                        <option value="fish">Salmon</option>
                     </select>
                 </label>
                 <label> 
-                    <h3>Choice of Sauce</h3>
-                    <input type="radio" name="Sauce" value={sauce} onChange={onChange} />
-                    <label>Red Sauce</label>
-                    <input type="radio" name="Sauce" value={sauce} onChange={onChange} />
-                    <label>Pesto Sauce</label>
-                    <input type="radio" name="Sauce" value={sauce} onChange={onChange} />
-                    <label>Garlic Red Sauce</label>
+                    <h3>Choice of Carb</h3>
+                    <p>Required</p>
+                    <input type="radio" name="carb1" value={carb} onChange={onChange} />
+                    <label>White Rice</label>
+                    <input type="radio" name="carb2" value={carb} onChange={onChange} />
+                    <label>Brown Rice</label>
+                    <input type="radio" name="carb3" value={carb} onChange={onChange} />
+                    <label>Potatoes</label>
+                    <input type="radio" name="carb4" value={carb} onChange={onChange} />
+                    <label>Sweet Potatoes</label>
                 </label>
                 <label>
-                    <h3>Toppings</h3>
-                    <input type="checkbox" name='topping1' value='Pepperoni' checked={topping} onChange={onChange} />
+                    <h3>Choice of Veggies</h3>
+                    <p>Optional</p>
+                    <input type="checkbox" name='veggie1' value='Pepperoni' checked={veggie} onChange={onChange} />
                     <label>Pepperoni</label> 
-                    <input type="checkbox" name='topping2' value='Chicken' checked={topping} onChange={onChange} />
+                    <input type="checkbox" name='veggie2' value='Chicken' checked={veggie} onChange={onChange} />
                     <label>Chicken</label>
-                    <input type="checkbox" name='topping3' value='Bacon' checked={topping} onChange={onChange} />
+                    <input type="checkbox" name='veggie3' value='Bacon' checked={veggie} onChange={onChange} />
                     <label>Bacon</label>
-                    <input type="checkbox" name='topping4' value='Onions' checked={topping} onChange={onChange} />
+                    <input type="checkbox" name='veggie4' value='Onions' checked={veggie} onChange={onChange} />
                     <label>Onions</label>
-                    <input type="checkbox" name="topping5" value='BellPeppers' checked={topping} onChange={onChange} />
+                    <input type="checkbox" name="veggie5" value='BellPeppers' checked={veggie} onChange={onChange} />
                     <label>BellPeppers</label>
                 </label>
-                <label>
-                    <h3>Choice of Substitute</h3>
-                    <input 
-                        type='radio'
-                        name='substitute'
-                        value={substitute}
-                        onChange={onChange}
-                    />
+                <label for='sauce-select'>
+                    <h3>Choice of Added Sauce</h3>
+                    <p>Optional</p>
+                    <select name='sauce' id='sauce-dropdown' onChange={onChange}>
+                        <option value="">--Please Choose an Option--</option>
+                        <option value="small">Lowcal BBQ</option>
+                    </select>
                 </label>
                 <label id="special-text"> 
                     <h3>Special Instructions</h3>
