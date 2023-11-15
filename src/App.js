@@ -11,14 +11,10 @@ import Home from "./Components/Homepage";
 
 
 const initialFormValues = {
-  username: "",
-  size: "",
+  protein: "",
+  carb: "",
+  veggie: "",
   sauce: "",
-  topping1: false,
-  topping2: false,
-  topping3: false,
-  topping4: false,
-  topping5: false,
   special: ""
 }
 const initialFormErrors = {

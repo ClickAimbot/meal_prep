@@ -1,4 +1,3 @@
-// HomeComponent.js
 import { useNavigate } from 'react-router-dom';
 import './homepage.css';
 
@@ -20,17 +19,23 @@ export default function Home () {
       <div className='meal-box'>
         <div className='meal-description'>
           <h3>Lean Meals</h3>
-          <p>Description of Lean Meals criteria goes here.</p>
+          <p>Lean Meals consist of the following:</p>
+          <p>4oz of Protein</p>
+          <p>Half Cup Carbs</p>
+          <p>Half Cup Veggies</p>
         </div>
-        <button onClick={routeToLeanPrep}>Lean Meals</button>
+        <button onClick={routeToLeanPrep}>$9.99</button>
       </div>
 
       <div className='meal-box'>
         <div className='meal-description'>
           <h3>Bulk Meals</h3>
-          <p>Description of Bulk Meals criteria goes here.</p>
+          <p>Bulk Meals consist of the following:</p>
+          <p>6oz of Protein</p>
+          <p>1 Cup Carbs</p>
+          <p>1 Cup Veggies</p>
         </div>
-        <button onClick={routeToBulkPrep}>Bulk Meals</button>
+        <button onClick={routeToBulkPrep}>$12.99</button>
       </div>
     </div>
   );
