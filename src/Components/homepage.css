@@ -1,8 +1,8 @@
-/* HomeComponent.css */
+/* homepage.css */
 
 .home-wrapper {
     text-align: center;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f8f8f8;
@@ -21,14 +21,44 @@
     margin-bottom: 20px;
   }
   
+  .meal-box-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Adjust the gap as needed */
+  }
+  
+  .meal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .meal-description {
+    text-align: left;
+  }
+  
+  .meal-description h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .meal-description p {
+    font-size: 1rem;
+  }
+  
   .home-wrapper button {
     font-size: 1rem;
     padding: 10px 20px;
-    margin: 10px;
-    background-color: #4caf50; /* Green background color */
-    color: white; /* White text color */
-    border: none; /* Remove borders */
-    border-radius: 8px; /* Optional: Round the corners */
-    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
   }
   
