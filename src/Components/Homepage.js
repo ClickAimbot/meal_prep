@@ -4,11 +4,11 @@ import './homepage.css';
 export default function Home () {
   const navigate = useNavigate();
   const routeToLeanPrep = () => {
-    navigate('/leanform');
+    navigate('/leanprep');
   };
 
   const routeToBulkPrep = () => {
-    navigate('/bulkform');
+    navigate('/bulkprep');
   };
 
   return (

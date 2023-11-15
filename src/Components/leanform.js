@@ -23,7 +23,7 @@ const Leanform = (props) => {
             {errors.veggie ? <p>{errors.veggie}</p> : null}
             {errors.sauce ? <p>{errors.sauce}</p> : null}
             <form onSubmit={onSubmit}>
-                <label for='protein-select'>
+                <label htmlFor='protein-select'>
                     <h3>Choice of Protein</h3>
                     <p>Required</p>
                     <select name='protein' id='protein-dropdown' onChange={onChange}>
@@ -33,7 +33,7 @@ const Leanform = (props) => {
                         <option value={protein}>Salmon</option>
                     </select>
                 </label>
-                <label for='carb-select'>
+                <label htmlFor='carb-select'>
                     <h3>Choice of Carb</h3>
                     <p>Required</p>
                     <select name='carb' id='carb-dropdown' onChange={onChange}>
@@ -44,7 +44,7 @@ const Leanform = (props) => {
                         <option value={carb}>Sweet Potatoes</option>
                     </select>
                 </label>
-                <label for='veggie-select'>
+                <label htmlFor='veggie-select'>
                     <h3>Choice of Veggie</h3>
                     <p>Required</p>
                     <select name='veggie' id='veggie-dropdown' onChange={onChange}>
@@ -55,7 +55,7 @@ const Leanform = (props) => {
                         <option value={veggie}>Sweet Potatoes</option>
                     </select>
                 </label>
-                <label for='sauce-select'>
+                <label htmlFor='sauce-select'>
                     <h3>Choice of Sauce</h3>
                     <p>Optional</p>
                     <select name='sauce' id='sauce-dropdown' onChange={onChange}>
