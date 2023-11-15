@@ -1,7 +1,7 @@
 import React from 'react';
 import './form.css';
 
-const Leanform = (props) => {
+export const Leanform = (props) => {
     const { submit, errors, change } = props;
     const { protein, carb, veggie, sauce} = props.values
     
@@ -65,16 +65,6 @@ const Leanform = (props) => {
                         <option value={sauce}></option>
                         <option value={sauce}></option>
                     </select>
-                </label>
-                <label id="special-text"> 
-                    <h3>Special Instructions</h3>
-                    <input 
-                        id='container-special'
-                        placeholder="Anything else you'd like to add?"
-                        type='text'
-                        name="special"
-                        onChange={onChange}
-                    />
                 </label>
                 <footer>
                     <label> 

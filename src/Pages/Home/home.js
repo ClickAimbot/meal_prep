@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './homepage.css';
 
-export default function Home () {
+export const Home = () => {
   const navigate = useNavigate();
   const routeToLeanPrep = () => {
     navigate('/leanprep');
@@ -14,7 +14,8 @@ export default function Home () {
   return (
     <div className='home-wrapper'>
       <h1>Welcome to our meal prepping service!</h1>
-      <h2>Let us help you reach your goals!</h2>
+      <h2>Let us help you save time and effort on the cooking and cleaning!</h2>
+      <h2>Fresh made meals ready to go for an entire week.</h2>
 
       <div className='meal-box'>
         <div className='meal-description'>
