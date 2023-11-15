@@ -6,20 +6,18 @@ const formSchema = yup.object().shape({
         .trim()
         .required("Username is required")
         .min(2, "name must be at least 2 characters"),
-    size: yup
-        .string(),
-    topping1: yup
-        .string(),
-    topping2: yup
-        .string(),
-    topping3: yup
-        .string(),
-    topping4: yup
-        .string(),
-    topping5: yup
-        .string(),
-    special: yup
+    protein: yup
         .string()
+        .oneOf(['chicken', 'lean ground beef', 'salmon'], 'Please select a protein'),
+    carb: yup
+        .string()
+        .oneOf(['white rice', 'brown rice', 'potatoes', 'sweet potatoes'], 'Please select a carb'),   
+    veggie: yup
+        .string()
+        .oneOf(['bell peppers'], 'Please select a veggie'),
+    sauce: yup
+        .string()
+        .oneOf(['bbq', 'ranch', 'ketchup', 'mayo', 'mustard'], 'Please select a sauce'),     
 })
 
 export default formSchema;

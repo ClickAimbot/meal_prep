@@ -3,7 +3,7 @@ import './form.css';
 
 const Prepform = (props) => {
     const { submit, errors, change } = props;
-    const { substitute, veggie, carb} = props.values
+    const { protein, carb, veggie, sauce} = props.values
     
     const onChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -18,49 +18,52 @@ const Prepform = (props) => {
 
     return (
         <div className="container" id="prep-form">
+            {errors.protein ? <p>{errors.protein}</p> : null}
+            {errors.carb ? <p>{errors.carb}</p> : null}
+            {errors.veggie ? <p>{errors.veggie}</p> : null}
+            {errors.sauce ? <p>{errors.sauce}</p> : null}
             <form onSubmit={onSubmit}>
                 <label for='protein-select'>
                     <h3>Choice of Protein</h3>
                     <p>Required</p>
                     <select name='protein' id='protein-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
-                        <option value="chicken">Chicken</option>
-                        <option value="beef">Lean Ground Beef</option>
-                        <option value="fish">Salmon</option>
+                        <option value={protein}>Chicken</option>
+                        <option value={protein}>Lean Ground Beef</option>
+                        <option value={protein}>Salmon</option>
                     </select>
                 </label>
-                <label> 
+                <label for='carb-select'>
                     <h3>Choice of Carb</h3>
                     <p>Required</p>
-                    <input type="radio" name="carb1" value={carb} onChange={onChange} />
-                    <label>White Rice</label>
-                    <input type="radio" name="carb2" value={carb} onChange={onChange} />
-                    <label>Brown Rice</label>
-                    <input type="radio" name="carb3" value={carb} onChange={onChange} />
-                    <label>Potatoes</label>
-                    <input type="radio" name="carb4" value={carb} onChange={onChange} />
-                    <label>Sweet Potatoes</label>
+                    <select name='carb' id='carb-dropdown' onChange={onChange}>
+                        <option value="">--Please Choose an Option--</option>
+                        <option value={carb}>White Rice</option>
+                        <option value={carb}>Brown Rice</option>
+                        <option value={carb}>Potatoes</option>
+                        <option value={carb}>Sweet Potatoes</option>
+                    </select>
                 </label>
-                <label>
-                    <h3>Choice of Veggies</h3>
-                    <p>Optional</p>
-                    <input type="checkbox" name='veggie1' value='Pepperoni' checked={veggie} onChange={onChange} />
-                    <label>Pepperoni</label> 
-                    <input type="checkbox" name='veggie2' value='Chicken' checked={veggie} onChange={onChange} />
-                    <label>Chicken</label>
-                    <input type="checkbox" name='veggie3' value='Bacon' checked={veggie} onChange={onChange} />
-                    <label>Bacon</label>
-                    <input type="checkbox" name='veggie4' value='Onions' checked={veggie} onChange={onChange} />
-                    <label>Onions</label>
-                    <input type="checkbox" name="veggie5" value='BellPeppers' checked={veggie} onChange={onChange} />
-                    <label>BellPeppers</label>
+                <label for='veggie-select'>
+                    <h3>Choice of Veggie</h3>
+                    <p>Required</p>
+                    <select name='carb' id='carb-dropdown' onChange={onChange}>
+                        <option value="">--Please Choose an Option--</option>
+                        <option value={carb}>White Rice</option>
+                        <option value={carb}>Brown Rice</option>
+                        <option value={carb}>Potatoes</option>
+                        <option value={carb}>Sweet Potatoes</option>
+                    </select>
                 </label>
                 <label for='sauce-select'>
-                    <h3>Choice of Added Sauce</h3>
+                    <h3>Choice of Sauce</h3>
                     <p>Optional</p>
                     <select name='sauce' id='sauce-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
-                        <option value="small">Lowcal BBQ</option>
+                        <option value={sauce}>BBQ</option>
+                        <option value={sauce}>Coming soon..</option>
+                        <option value={sauce}></option>
+                        <option value={sauce}></option>
                     </select>
                 </label>
                 <label id="special-text"> 
