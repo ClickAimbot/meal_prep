@@ -1,7 +1,7 @@
 import React from 'react';
 import './form.css';
 
-const Prepform = (props) => {
+const Leanform = (props) => {
     const { submit, errors, change } = props;
     const { protein, carb, veggie, sauce} = props.values
     
@@ -47,12 +47,12 @@ const Prepform = (props) => {
                 <label for='veggie-select'>
                     <h3>Choice of Veggie</h3>
                     <p>Required</p>
-                    <select name='carb' id='carb-dropdown' onChange={onChange}>
+                    <select name='veggie' id='veggie-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
-                        <option value={carb}>White Rice</option>
-                        <option value={carb}>Brown Rice</option>
-                        <option value={carb}>Potatoes</option>
-                        <option value={carb}>Sweet Potatoes</option>
+                        <option value={veggie}>Broccoli</option>
+                        <option value={veggie}>Onions & Bell Peppers</option>
+                        <option value={veggie}>Potatoes</option>
+                        <option value={veggie}>Sweet Potatoes</option>
                     </select>
                 </label>
                 <label for='sauce-select'>
@@ -91,4 +91,4 @@ const Prepform = (props) => {
     )
 }
 
-export default Prepform;
+export default Leanform;

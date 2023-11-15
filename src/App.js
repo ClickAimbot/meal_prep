@@ -5,7 +5,8 @@ import * as yup from 'yup';
 import axios from 'axios';
 
 import formSchema from "./Components/Validation";
-import Prepform from "./Components/Prepform";
+import Leanform from "./Components/leanform";
+import Bulkform from "./Components/bulkform";
 import Home from "./Components/Homepage";
 
 
@@ -65,7 +66,8 @@ const App = () => {
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="mealprep" element={<Prepform values={formValues} change={onChange} errors={formErrors} submit={onSubmit} />} />
+          <Route path="leanprep" element={<Leanform values={formValues} change={onChange} errors={formErrors} submit={onSubmit} />} />
+          <Route path="bulkprep" element={<Bulkform values={formValues} change={onChange} errors={formErrors} submit={onSubmit} />} />
         </Routes>
       </div>
   );
