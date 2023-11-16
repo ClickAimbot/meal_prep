@@ -6,9 +6,10 @@ import axios from 'axios';
 
 import {Navbar} from "./Components/navbar.js";
 import {Home} from "./Pages/Home/home.js";
+import {Plans} from "./Pages/Plans/plans.js";
 import {LoginPage} from "./Pages/Login/loginPage.js";
-import {Leanform} from "./Pages/Plans/leanform.js";
-import {Bulkform} from "./Pages/Plans/bulkform.js";
+import {Leanform} from "./Pages/Plans/forms/leanform.js";
+import {Bulkform} from "./Pages/Plans/forms/bulkform.js";
 import schema from "./Components/validation.js";
 
 const initialFormValues = {
@@ -56,6 +57,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/plans" element={<Plans />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="leanprep" element={<Leanform values={formValues} change={handleChange} errors={formErrors} submit={handleSubmit} />} />
           <Route path="bulkprep" element={<Bulkform values={formValues} change={handleChange} errors={formErrors} submit={handleSubmit}/>} />

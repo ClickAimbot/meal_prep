@@ -1,48 +1,76 @@
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './home.css';
 import leanMealsImage from "../../Images/IMG_0365.jpg"
 import leanMealsImage2 from "../../Images/IMG_0366.jpg"
+import leanMealsImage3 from "../../Images/IMG_0367.jpg"
+import leanMealsImage4 from "../../Images/IMG_0368.jpg"
 
 export const Home = () => {
   const navigate = useNavigate();
-  const routeToLeanPrep = () => {
-    navigate('/leanprep');
-  };
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [
+    leanMealsImage,
+    leanMealsImage2,
+    leanMealsImage3,
+    leanMealsImage4
+  ];
 
-  const routeToBulkPrep = () => {
-    navigate('/bulkprep');
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage(currentImage === images.length - 1 ? 0 : currentImage + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [ currentImage, images.length ]);
+
+  const routeToPlans = () => {
+    navigate('/plans');
+  }
 
   return (
-    <div className='home-wrapper'>
-      <h1>Welcome to our meal prepping service!</h1>
-      <h2>Let us help you save time and effort on the cooking and cleaning!</h2>
-      <h2>Fresh made meals ready to go for an entire week.</h2>
-
-      <div className='meal-box'>
-      <img src={leanMealsImage} alt="Lean Meals" className="meal-image" />
-        <div className='meal-description'> 
-          <h3>Lean Meals</h3>
-          <p>Lean Meals consist of the following:</p>
-          <p>4oz of Protein</p>
-          <p>Half Cup Carbs</p>
-          <p>Half Cup Veggies</p>
-        </div>
-        <button onClick={routeToLeanPrep}>Order Now</button>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        height: "100vh",
+        overflow: "auto",
+      }}
+    >
+      <div
+        style={{
+          flex: "0 0 50%",
+          padding: "20px",
+        }}
+      >
+        <h2>About us</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida
+          consectetur lorem, nec dignissim justo lacinia et. Nullam efficitur,
+          ipsum vitae laoreet hendrerit, velit ipsum consectetur nibh, at congue
+          magna tellus a purus.
+        </p>
+        <p>
+          Pellentesque habitant morbi tristique senectus et netus et malesuada
+          fames ac turpis egestas. Sed iaculis euismod mi, eget porttitor lorem
+          pellentesque at. Phasellus elementum velit a ligula malesuada
+          tincidunt.
+        </p>
       </div>
-
-      <div className='meal-box'>
-      <img src={leanMealsImage2} alt="Lean Meals" className="meal-image" />
-        <div className='meal-description'>
-          <h3>Bulk Meals</h3>
-          <p>Bulk Meals consist of the following:</p>
-          <p>6oz of Protein</p>
-          <p>1 Cup Carbs</p>
-          <p>1 Cup Veggies</p>
-        </div>
-        <button onClick={routeToBulkPrep}>Order Now</button>
+      <div
+        style={{
+          flex: "0 0 50%",
+          padding: "20px",
+        }}
+      >
+        <img
+          src={images[currentImage]}
+          alt="Business"
+          style={{
+            width: "100%",
+            height: "auto",
+          }}
+        />
       </div>
     </div>
-  );
-};
-
+  )
+}
