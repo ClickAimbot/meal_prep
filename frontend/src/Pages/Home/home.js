@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './home.css';
+import leanMealsImage from "../../Images/IMG_0365.jpg"
+import leanMealsImage2 from "../../Images/IMG_0366.jpg"
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -18,6 +20,7 @@ export const Home = () => {
       <h2>Fresh made meals ready to go for an entire week.</h2>
 
       <div className='meal-box'>
+      <img src={leanMealsImage} alt="Lean Meals" className="meal-image" />
         <div className='meal-description'> 
           <h3>Lean Meals</h3>
           <p>Lean Meals consist of the following:</p>
@@ -29,6 +32,7 @@ export const Home = () => {
       </div>
 
       <div className='meal-box'>
+      <img src={leanMealsImage2} alt="Lean Meals" className="meal-image" />
         <div className='meal-description'>
           <h3>Bulk Meals</h3>
           <p>Bulk Meals consist of the following:</p>

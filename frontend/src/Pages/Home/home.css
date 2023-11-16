@@ -37,6 +37,11 @@
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
+
+  .meal-image {
+    max-width: 50%; /* Set the maximum width to 100% */
+    height: auto; /* Maintain aspect ratio */
+  }
   
   .meal-description {
     text-align: left;

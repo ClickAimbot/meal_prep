@@ -6,9 +6,8 @@ export const Bulkform = (props) => {
     const { protein, carb, veggie, sauce} = props.values
     
     const onChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        const newVal = type === 'checkbox' ? checked : value;
-        change(name, newVal);
+        const {name, value } = e.target;
+        change(name, value)
     }
 
     const onSubmit = (e) => {
@@ -61,20 +60,8 @@ export const Bulkform = (props) => {
                     <select name='sauce' id='sauce-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
                         <option value={sauce}>BBQ</option>
-                        <option value={sauce}>Coming soon..</option>
-                        <option value={sauce}></option>
-                        <option value={sauce}></option>
+
                     </select>
-                </label>
-                <label id="special-text"> 
-                    <h3>Special Instructions</h3>
-                    <input 
-                        id='container-special'
-                        placeholder="Anything else you'd like to add?"
-                        type='text'
-                        name="special"
-                        onChange={onChange}
-                    />
                 </label>
                 <footer>
                     <label> 
