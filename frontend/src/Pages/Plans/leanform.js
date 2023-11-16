@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './form.css';
 
 export const Leanform = (props) => {
     const { submit, errors, change } = props;
-    const { protein, carb, veggie, sauce} = props.values
+    const initialFormState = {
+        protein: '',
+        carb: '',
+        veggie: '',
+        sauce: '',
+    };
+
+    const [formValues, setFormValues] = useState(initialFormState);
     
     const onChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        const newVal = type === 'checkbox' ? checked : value;
-        change(name, newVal);
+        const {name, value } = e.target;
+        setFormValues({...formValues, [name]: value});
+        change(name, value)
     }
 
     const onSubmit = (e) => {
@@ -28,9 +35,9 @@ export const Leanform = (props) => {
                     <p>Required</p>
                     <select name='protein' id='protein-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
-                        <option value={protein}>Chicken</option>
-                        <option value={protein}>Lean Ground Beef</option>
-                        <option value={protein}>Salmon</option>
+                        <option value={formValues.protein}>Chicken</option>
+                        <option value={formValues.protein}>Lean Ground Beef</option>
+                        <option value={formValues.protein}>Salmon</option>
                     </select>
                 </label>
                 <label htmlFor='carb-select'>
@@ -38,10 +45,10 @@ export const Leanform = (props) => {
                     <p>Required</p>
                     <select name='carb' id='carb-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
-                        <option value={carb}>White Rice</option>
-                        <option value={carb}>Brown Rice</option>
-                        <option value={carb}>Potatoes</option>
-                        <option value={carb}>Sweet Potatoes</option>
+                        <option value={formValues.carb}>White Rice</option>
+                        <option value={formValues.carb}>Brown Rice</option>
+                        <option value={formValues.carb}>Potatoes</option>
+                        <option value={formValues.carb}>Sweet Potatoes</option>
                     </select>
                 </label>
                 <label htmlFor='veggie-select'>
@@ -49,10 +56,10 @@ export const Leanform = (props) => {
                     <p>Required</p>
                     <select name='veggie' id='veggie-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
-                        <option value={veggie}>Broccoli</option>
-                        <option value={veggie}>Onions & Bell Peppers</option>
-                        <option value={veggie}>Potatoes</option>
-                        <option value={veggie}>Sweet Potatoes</option>
+                        <option value={formValues.veggie}>Broccoli</option>
+                        <option value={formValues.veggie}>Onions & Bell Peppers</option>
+                        <option value={formValues.veggie}>Potatoes</option>
+                        <option value={formValues.veggie}>Sweet Potatoes</option>
                     </select>
                 </label>
                 <label htmlFor='sauce-select'>
@@ -60,10 +67,8 @@ export const Leanform = (props) => {
                     <p>Optional</p>
                     <select name='sauce' id='sauce-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
-                        <option value={sauce}>BBQ</option>
-                        <option value={sauce}>Coming soon..</option>
-                        <option value={sauce}></option>
-                        <option value={sauce}></option>
+                        <option value={formValues.sauce}>BBQ</option>
+
                     </select>
                 </label>
                 <footer>

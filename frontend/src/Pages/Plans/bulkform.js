@@ -1,7 +1,7 @@
 import React from 'react';
 import './form.css';
 
-const Bulkform = (props) => {
+export const Bulkform = (props) => {
     const { submit, errors, change } = props;
     const { protein, carb, veggie, sauce} = props.values
     
@@ -90,5 +90,3 @@ const Bulkform = (props) => {
         </div>
     )
 }
-
-export default Bulkform;

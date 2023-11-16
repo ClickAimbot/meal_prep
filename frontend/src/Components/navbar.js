@@ -9,17 +9,6 @@ export const Navbar = () => {
         <Link to="/" className="logo">
           Prepped Up
         </Link>
-        <ul className="nav-links">
-          <li>
-            <Link to="plans">Our Plans</Link>
-          </li>
-          <li>
-            <Link to="contact-us">About Us</Link>
-          </li>
-          <li>
-            <Link to="menus">Our Menus</Link>
-          </li>
-        </ul>
         <Link to="/login" className="login-btn">
             Login
         </Link>
