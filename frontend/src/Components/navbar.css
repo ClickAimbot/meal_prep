@@ -25,8 +25,8 @@
     list-style: none;
     display: flex;
     gap: 0px; /* Adjust the gap as needed */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    margin: 5; /* Remove default margin */
+    padding: 5; /* Remove default padding */
   }
   
   .nav-links li {
