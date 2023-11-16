@@ -19,7 +19,7 @@ export const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage(currentImage === images.length - 1 ? 0 : currentImage + 1);
-    }, 5000);
+    }, 2500);
     return () => clearInterval(interval);
   }, [ currentImage, images.length ]);
 
@@ -28,48 +28,18 @@ export const Home = () => {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        height: "100vh",
-        overflow: "auto",
-      }}
-    >
-      <div
-        style={{
-          flex: "0 0 50%",
-          padding: "20px",
-        }}
-      >
+    <div className="container">
+      <div className="text-content">
         <h2>About us</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida
-          consectetur lorem, nec dignissim justo lacinia et. Nullam efficitur,
-          ipsum vitae laoreet hendrerit, velit ipsum consectetur nibh, at congue
-          magna tellus a purus.
+          We love to cook fresh and healthy meals for the person who wants to keep it simple and healthy. 
+          We are a small business that is family owned and operated.  
+          We are here to help you reach your goals and make your life easier. 
         </p>
-        <p>
-          Pellentesque habitant morbi tristique senectus et netus et malesuada
-          fames ac turpis egestas. Sed iaculis euismod mi, eget porttitor lorem
-          pellentesque at. Phasellus elementum velit a ligula malesuada
-          tincidunt.
-        </p>
+        <button onClick={routeToPlans}>Order Now</button>
       </div>
-      <div
-        style={{
-          flex: "0 0 50%",
-          padding: "20px",
-        }}
-      >
-        <img
-          src={images[currentImage]}
-          alt="Business"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        />
+      <div className="slideshow">
+        <img src={images[currentImage]} alt="Business" />
       </div>
     </div>
   )

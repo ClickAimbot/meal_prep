@@ -12,7 +12,6 @@ const schema = yup.object().shape({
         .required('Please select a veggie'),
     sauce: yup
         .string()
-        .required('Please select a sauce')
 })
 
 export default schema;

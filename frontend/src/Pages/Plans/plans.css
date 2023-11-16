@@ -1,69 +1,81 @@
-/* homepage.css */
+/* Update the styles in your plans.css file */
 
-  .plans-wrapper {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .plans-wrapper h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .plans-wrapper h2 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .meal-box-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px; /* Adjust the gap as needed */
-  }
-  
-  .meal-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
+.plans-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
 
-  .meal-image {
-    max-width: 50%; /* Set the maximum width to 100% */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
-  .meal-description {
-    text-align: left;
-  }
-  
-  .meal-description h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-  
-  .meal-description p {
-    font-size: 1rem;
-  }
-  
-  .plans-wrapper button {
-    font-size: 1rem;
-    padding: 10px 20px;
-    background-color: #bf6600;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
+.plans-wrapper h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.plans-wrapper h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.plans-wrapper h3 {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.meal-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.meal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.meal-description {
+  text-align: center;
+}
+
+.meal-description h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.meal-description p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.meal-box button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #bf6600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.meal-box button:hover {
+  background-color: ce6f02;
+}

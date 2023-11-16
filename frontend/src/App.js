@@ -13,10 +13,10 @@ import {Bulkform} from "./Pages/Plans/forms/bulkform.js";
 import schema from "./Components/validation.js";
 
 const initialFormValues = {
-  protein: '',
-  carb: '',
-  veggie: '',
-  sauce: '',
+  protein: null,
+  carb: null,
+  veggie: null,
+  sauce: null,
 };
 
 const initialFormErrors = {
@@ -32,13 +32,21 @@ const App = () => {
   const [users, setUsers] = useState([]);
 
   const handleSubmit = () => {
-    axios.post('https://reqres.in/api/users', formValues)
-    .then(res => {
-      setUsers([ res.data, ...users ])
-    })
-    .catch(err => console.error(err))
-    .finally(() => setFormValues(initialFormValues))
-  }
+    axios
+      .post('https://reqres.in/api/users', formValues)
+      .then((res) => {
+        setUsers([res.data, ...users]);
+        setFormValues((prevFormValues) => ({
+          ...prevFormValues,
+          protein: null,
+          carb: null,
+          veggie: null,
+          sauce: null,
+        }));
+      })
+      .catch((err) => console.error(err));
+  };
+  
 
   const validate = (name, value) => {
     yup.reach(schema, name)
