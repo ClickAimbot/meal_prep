@@ -5,7 +5,7 @@ import { Routes, Route} from 'react-router-dom';
 import {Navbar} from "./Components/navbar.js";
 import {Home} from "./Pages/Home/home.js";
 import {ContactUs} from "./Pages/Help/contact-us.js";
-import {LoginPage} from "./Pages/Login/loginPage.jsx";
+import {LoginPage} from "./Pages/Login/loginPage.js";
 import {Leanform} from "./Pages/Plans/leanform.js"
 
 const App = () => {
