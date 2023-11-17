@@ -1,0 +1,76 @@
+const proteins = [
+    {
+        name: 'Chicken Breast',
+        calories: '150cal',
+        macros: {
+            protein: '21g',
+            carbs: '0g',
+            fat: '6g',
+        },
+    },
+    {
+        name: 'Pulled Pork',
+        calories: '405cal',
+        macros: {
+            protein: '30g',
+            carbs: '0g',
+            fat: '6g',
+        },
+    },
+    {
+        name: 'Tilapia',
+        calories: '405cal',
+        macros: {
+            protein: '30g',
+            carbs: '0g',
+            fat: '6g',
+        },
+    },
+    {
+        name: 'Shrimp',
+              calories: '405cal',
+              macros: {
+                protein: '30g',
+                carbs: '0g',
+                fat: '6g',
+              },
+            },
+            {
+              name: 'Ground Turkey',
+              calories: '405cal',
+              macros: {
+                protein: '30g',
+                carbs: '0g',
+                fat: '6g',
+              },
+            },
+            {
+              name: 'Ground Tofu',
+              calories: '405cal',
+              macros: {
+                protein: '30g',
+                carbs: '0g',
+                fat: '6g',
+              },
+            },
+            {
+              name: 'Ground Beef',
+              calories: '405cal',
+              macros: {
+                protein: '30g',
+                carbs: '0g',
+                fat: '6g',
+              },
+            },
+            {
+              name: 'Kidney Beans',
+              calories: '405cal',
+              macros: {
+                protein: '30g',
+                carbs: '0g',
+                fat: '6g',
+              },
+            },
+          ];
+
+export default { proteins };

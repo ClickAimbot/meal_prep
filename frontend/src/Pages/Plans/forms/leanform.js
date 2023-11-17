@@ -16,25 +16,19 @@ export const Leanform = (props) => {
     }
 
     return (
-        <div className="container" id="prep-form">
-            {errors.protein ? <p>{errors.protein}</p> : null}
-            {errors.carb ? <p>{errors.carb}</p> : null}
-            {errors.veggie ? <p>{errors.veggie}</p> : null}
-            {errors.sauce ? <p>{errors.sauce}</p> : null}
-            <form onSubmit={onSubmit}>
+        <form className='app__form section__padding' id="form" onSubmit={onSubmit}>
+            <div className="app__wrapper_info">
+            <h2 className='p__opensans' style={{color: 'black'}} >Choice of Protein</h2>
                 <label htmlFor='protein-select'>
-                    <h3>Choice of Protein</h3>
-                    <p>Required</p>
-                    <select name='protein' id='protein-dropdown' onChange={onChange}>
+                    <select name='protein'  id='protein-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
                         <option value={protein}>Chicken</option>
                         <option value={protein}>Lean Ground Beef</option>
                         <option value={protein}>Salmon</option>
                     </select>
-                </label>
+                </label>  
+                <h2 className='p__opensans' style={{color: 'black'}} >Choice of Carb</h2>
                 <label htmlFor='carb-select'>
-                    <h3>Choice of Carb</h3>
-                    <p>Required</p>
                     <select name='carb' id='carb-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
                         <option value={carb}>White Rice</option>
@@ -42,10 +36,9 @@ export const Leanform = (props) => {
                         <option value={carb}>Potatoes</option>
                         <option value={carb}>Sweet Potatoes</option>
                     </select>
-                </label>
-                <label htmlFor='veggie-select'>
-                    <h3>Choice of Veggie</h3>
-                    <p>Required</p>
+                </label>  
+                <h2 className='p__opensans' style={{color: 'black'}} >Choice of Vegetable</h2>
+                <label htmlFor='veggie-select' >
                     <select name='veggie' id='veggie-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
                         <option value={veggie}>Broccoli</option>
@@ -54,26 +47,25 @@ export const Leanform = (props) => {
                         <option value={veggie}>Sweet Potatoes</option>
                     </select>
                 </label>
-                <label htmlFor='sauce-select'>
-                    <h3>Choice of Sauce</h3>
+                <h2 className='p__opensans' style={{color: 'black'}} >Choice of Sauce</h2>
+                <label htmlFor='sauce-select'> 
                     <p>Optional</p>
                     <select name='sauce' id='sauce-dropdown' onChange={onChange}>
                         <option value="">--Please Choose an Option--</option>
                         <option value={sauce}>BBQ</option>
-
                     </select>
                 </label>
-                <footer>
-                    <label> 
-                        <h3>Ready to eat?</h3>
-                        <input 
-                            id="order-button"
-                            type="submit"
-                            value="Add to order"
-                        />
+            </div>
+            <footer>
+                    <label>
+                    <input
+                        id='order-button'
+                        type='submit'
+                        value='Add to Cart'
+                        className='custom__button'
+                    />
                     </label>
-                </footer>
-            </form>
-        </div>
+            </footer>
+        </form>
     )
 }

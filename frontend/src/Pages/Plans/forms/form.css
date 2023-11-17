@@ -1,7 +1,5 @@
-/* Update the styles in your form.css file */
-
-.container {
-  max-width: 800px;
+.app__form {
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f8f8f8;
@@ -10,7 +8,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container h3 {
+.app__wrapper_info h2 {
   font-size: 1.2rem;
   margin-bottom: 5px;
   color: #333;
@@ -32,11 +30,11 @@ label {
 }
 
 select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-top: 5px;
+  width: 120%;
+  padding: 14px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 footer {
@@ -45,17 +43,17 @@ footer {
 
 #order-button {
   font-size: 1rem;
-  padding: 10px 20px;
-  background-color: #bf6600;
+  padding: 12px 35px;
+  background-color: orangered;
   color: white;
-  border: none;
-  border-radius: 8px;
+  border: 1px solid orangered;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 #order-button:hover {
-  background-color: #ce6f02;
+  background-color: #000000;
 }
 
 /* Add additional styles for handling error messages if needed */
