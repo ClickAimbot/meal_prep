@@ -8,7 +8,7 @@
 
 .app__gallery {
   flex-direction: row;
-  padding: 4rem 0 4rem 6rem;
+  padding: 8rem 6rem 6rem 8rem;
 }
 
 .app__gallery-content {
