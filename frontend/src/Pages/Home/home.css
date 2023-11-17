@@ -1,53 +1,130 @@
-/* Update the styles in your home.css file */
+.app__header {
+  background-color: white;
+}
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding: 20px;
-    background-color: #f8f8f8; /* Light background color */
+.app__header-h1 {
+  font-family: var(--font-base);
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  line-height: 117px;
+  font-size: 70px;
+}
+
+.app__header-img img {
+  width: 80%
+}
+
+.app__gallery {
+  display: flex;
+  flex-direction: row;
+}
+
+.app__gallery-images {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  max-width: 50%;
+  position: relative;
+}
+
+.app__gallery-images_container {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.app__gallery-images_container::-webkit-scrollbar {
+  display: none;
+}
+
+.app__gallery-images_card {
+  position: relative;
+  min-width: 301px;
+  height: 447px;
+  margin-right: 2rem;
+}
+
+.gallery__image-icon {
+  position: absolute;
+  color: black;
+  font-size: 2rem;
+  opacity: 0.5;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.app__gallery-images_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.app__gallery-images_card:hover img {
+  opacity: 0.35;
+}
+
+.app__gallery-images_card:hover .gallery__image-icon {
+  opacity: 1;
+}
+
+.app__gallery-images_arrows {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  position: absolute;
+  bottom: 5%;
+}
+
+.gallery__arrow-icon {
+  color: orangered;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.gallery__arrow-icon:hover {
+  color: var(--color-black)
+}
+
+@media screen and (max-width: 2000px) {
+  .app__gallery-images_card {
+      min-width: 400px;
+      height: 550px;
   }
-  
-  .text-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+}
+
+@media screen and (max-width: 1150px) {
+  .app__gallery {
+      flex-direction: column;
   }
-  
-  .text-content h2 {
-    font-size: 2rem; /* Larger font size for headings */
-    margin-bottom: 15px;
-    color: #333; /* Dark text color */
+
+  .app__gallery-images {
+      max-width: 100%;
+      margin: 5rem 0;
   }
-  
-  .text-content p {
-    font-size: 1.2rem;
-    color: #666; /* Slightly darker text color */
-    line-height: 1.6; /* Improved readability with increased line height */
+}
+
+@media screen and (max-width: 850px) {
+  .app__gallery {
+      padding: 4rem 0 4rem 4rem;
   }
-  
-  button {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    background-color: #bf6600;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+@media screen and (max-width: 650px) {
+  .app__gallery {
+      padding: 4rem 0 4rem 2rem;
   }
-  
-  button:hover {
-    background-color: #ce6f02; /* Darker green on hover */
+
+  .app__gallery-images_card {
+      min-width: 240px;
+      height: 320px;
   }
-  
-  .slideshow img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow for images */
-  }
-  
+}
