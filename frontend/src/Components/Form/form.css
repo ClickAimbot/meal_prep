@@ -7,6 +7,8 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .app__wrapper_info h2 {
@@ -59,12 +61,14 @@ footer {
 
 .meal-type-slider {
   position: absolute;
-  top: 10px;
+  margin-bottom: 15px;
   right: 10px;
   display: flex;
   background: linear-gradient(to right, #ddd 50%, #ddd 50%);
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
+  margin-top: 10px;
 }
 
 .slider-button {
@@ -75,10 +79,7 @@ footer {
   transition: 0.3s ease;
 }
 
-.lean {
-  background: linear-gradient(to right, orangered 50%, #ddd 50%);
-}
-
-.bulk {
-  background: linear-gradient(to right, #ddd 50%, orangered 50%);
+.slider-button.active {
+  background-color: orangered;
+  color: white;
 }
