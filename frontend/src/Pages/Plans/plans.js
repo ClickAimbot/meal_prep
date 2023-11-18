@@ -1,13 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import './plans.css';
-import leanMealsImage from "../../assets/gallery01.png"
-import leanMealsImage2 from "../../assets/gallery02.png"
 
 export const Plans = () => {
   const navigate = useNavigate();
   const routeToForm = () => {
-    navigate('/leanprep');
+    navigate('/form');
   };
 
   return (

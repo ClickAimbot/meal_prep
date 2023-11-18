@@ -6,6 +6,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .app__wrapper_info h2 {
@@ -56,4 +57,28 @@ footer {
   background-color: #000000;
 }
 
-/* Add additional styles for handling error messages if needed */
+.meal-type-slider {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  background: linear-gradient(to right, #ddd 50%, #ddd 50%);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slider-button {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.lean {
+  background: linear-gradient(to right, orangered 50%, #ddd 50%);
+}
+
+.bulk {
+  background: linear-gradient(to right, #ddd 50%, orangered 50%);
+}
