@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
 import './form.css';
@@ -22,7 +22,8 @@ const initialFormErrors = {
 export const Form = () => {
     const [formValues, setFormValues] = useState(initialFormValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
-    const [mealType, setMealType] = useState('lean');
+    const [subcontainerContent, setSubcontainerContent] = useState('');
+    const [orderCount, setOrderCount] = useState(0);
   
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -43,41 +44,29 @@ export const Form = () => {
         axios
           .post('https://reqres.in/api/users', formValues)
           .then((res) => {
-            console.log(res.data);
             setFormValues({
               protein: null,
               carb: null,
               veggie: null,
               sauce: null,
             });
+            setOrderCount((prevCount) => prevCount + 1);
           })
           .catch((err) => {
             console.log(err);
           });
-      }
+    };
 
-    const toggleMealType = () => {
-        setMealType((prevType) => (prevType === 'lean' ? 'bulk' : 'lean'));
-    }
+    useEffect(() => {
+      const content = `${formValues.protein || ''} ${formValues.carb || ''} ${formValues.veggie || ''}`;
+      setSubcontainerContent(content);
+    }, [formValues.protein, formValues.carb, formValues.veggie]);
 
     return (
-      <div className={`app__form ${mealType}`}>
-        <div className="meal-type-slider">
-          <div
-            className={`slider-button ${mealType === 'lean' ? 'active' : ''}`}
-            onClick={() => toggleMealType()}
-          >
-            Lean
-          </div>
-          <div
-            className={`slider-button ${mealType === 'bulk' ? 'active' : ''}`}
-            onClick={() => toggleMealType()}
-          >
-            Bulk
-          </div>
-        </div>
+      <div className="app__form">
         <form id="form" onSubmit={handleSubmit}>
             <div className="app__wrapper_info">
+            <h1 className='form__header p__opensans' style={{color: 'black'}} >Build Your Own Meal</h1>
             <h2 className='p__opensans' style={{color: 'black'}} >Choice of Protein</h2>
                 <label htmlFor='protein-select'>
                     <select name='protein'  id='protein-dropdown' onChange={handleChange}>
@@ -117,16 +106,19 @@ export const Form = () => {
                 </label>
             </div>
             <footer>
-                    <label>
-                    <input
-                        id='order-button'
-                        type='submit'
-                        value='Add to Cart'
-                        className='custom__button'
-                    />
-                    </label>
+                <button id="order-button" className='custon__button'>Add to Order</button>
             </footer>
         </form>
+        <div className="app__form-subcontainer p__opensans" >
+          {subcontainerContent && (
+            <div className='app__form-subcontainer-order'>
+              <h1>Your Order:</h1>
+                <p className='subcontainer-content'>{subcontainerContent}</p>
+                <h2 className="subcontainer-total"> Order Count: {orderCount}</h2>
+                <button id='order-button' className='custon__button'> Submit Order </button>
+            </div>
+          )}
+        </div>
       </div>
     )
 }

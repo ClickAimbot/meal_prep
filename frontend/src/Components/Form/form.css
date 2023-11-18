@@ -8,13 +8,19 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .app__wrapper_info h2 {
   font-size: 1.2rem;
   margin-bottom: 5px;
   color: #333;
+}
+
+.form__header {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .container p {
@@ -48,6 +54,8 @@ footer {
   font-size: 1rem;
   padding: 10px 40px;
   background-color: orangered;
+  margin-left: 40px;
+  margin-bottom: 35px;
   color: white;
   border: 1px solid orangered;
   border-radius: 10px;
@@ -59,27 +67,44 @@ footer {
   background-color: #000000;
 }
 
-.meal-type-slider {
-  position: absolute;
-  margin-bottom: 15px;
-  right: 10px;
-  display: flex;
-  background: linear-gradient(to right, #ddd 50%, #ddd 50%);
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  margin-top: 10px;
+.app__form-subcontainer {
+  flex: 1; /* Take up remaining space */
+  padding: 25px; /* Adjust padding as needed */
+  margin-left: 100px; /* Add margin to separate form and subcontainer */
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
 }
 
-.slider-button {
-  flex: 1;
-  padding: 10px;
+.app__form-subcontainer h1 {
   text-align: center;
-  cursor: pointer;
-  transition: 0.3s ease;
+  color: black;
 }
 
-.slider-button.active {
+.app__form-subcontainer p {
+  color: grey;
+}
+
+.subcontainer-total {
+  margin-top: 450px;
+  color: black;
+}
+
+#subcontainer__submit-button {
+  font-size: 1rem;
+  padding: 10px 40px;
   background-color: orangered;
+  margin-left: 40px;
+  margin-bottom: 15px;
   color: white;
+  border: 1px solid orangered;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#subcontainer__submit-button:hover {
+  background-color: #000000;
 }
