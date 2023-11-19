@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
-import axios from 'axios';
 import './form.css';
+import axios from 'axios';
 
 import schema from '../validation';
 
@@ -24,6 +24,7 @@ export const Form = () => {
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [subcontainerContent, setSubcontainerContent] = useState('');
     const [orderCount, setOrderCount] = useState(0);
+    const [orders, setOrders] = useState([]);
   
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -39,32 +40,38 @@ export const Form = () => {
       setFormValues({ ...formValues, [name]: value });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios
-          .post('https://reqres.in/api/users', formValues)
-          .then((res) => {
+    const handleOrder = (e) => {
+      e.preventDefault();
+      setOrders((prevOrders) => [...prevOrders, formValues]);
+      document.getElementById("form").reset();
+      setFormValues(initialFormValues);
+      setOrderCount((prevCount) => prevCount + 1);
+    };    
+
+    const handleOrderSubmit = async () => {
+      try {
+        await axios.post('https://reqres.in/api/orders', orders)
+            setOrders([]);
             setFormValues({
               protein: null,
               carb: null,
               veggie: null,
               sauce: null,
             });
-            setOrderCount((prevCount) => prevCount + 1);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+            setOrderCount(0);
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     useEffect(() => {
       const content = `${formValues.protein || ''} ${formValues.carb || ''} ${formValues.veggie || ''}`;
       setSubcontainerContent(content);
-    }, [formValues.protein, formValues.carb, formValues.veggie]);
-
+    }, [formValues.protein, formValues.carb, formValues.veggie, formValues.sauce]);
+    
     return (
       <div className="app__form">
-        <form id="form" onSubmit={handleSubmit}>
+        <form id="form" onSubmit={handleOrder}>
             <div className="app__wrapper_info">
             <h1 className='form__header p__opensans' style={{color: 'black'}} >Build Your Own Meal</h1>
             <h2 className='p__opensans' style={{color: 'black'}} >Choice of Protein</h2>
@@ -109,15 +116,32 @@ export const Form = () => {
                 <button id="order-button" className='custon__button'>Add to Order</button>
             </footer>
         </form>
-        <div className="app__form-subcontainer p__opensans" >
-          {subcontainerContent && (
-            <div className='app__form-subcontainer-order'>
-              <h1>Your Order:</h1>
-                <p className='subcontainer-content'>{subcontainerContent}</p>
-                <h2 className="subcontainer-total"> Order Count: {orderCount}</h2>
-                <button id='order-button' className='custon__button'> Submit Order </button>
-            </div>
+        <div className="app__form-subcontainer p__opensans">
+        {orders.length > 0 && (
+          <div className="app__form-subcontainer-order">
+          <h1>Your Order:</h1>
+          <ul>
+            {orders.map((order, index) => (
+              <li key={index}>
+                <p>{`Protein: ${order.protein || ''}`}</p>
+                <p>{`Carb: ${order.carb || ''}`}</p>
+                <p>{`Veggie: ${order.veggie || ''}`}</p>
+                <p>{`Sauce: ${order.sauce || ''}`}</p>
+              </li>
+            ))}
+          </ul>
+          <h2 className="subcontainer-total"> Order Count: {orderCount}</h2>
+          {orderCount >= 5 && (
+            <button
+              id="subcontainer__submit-button"
+              className="custon__button"
+              onClick={handleOrderSubmit}
+            >
+              Submit Order
+            </button>
           )}
+        </div>
+        )}
         </div>
       </div>
     )
