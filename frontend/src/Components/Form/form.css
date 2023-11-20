@@ -99,7 +99,7 @@ footer {
 }
 
 #subcontainer__submit-button {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   font-size: 1rem;
   padding: 10px 40px;
   background-color: orangered;
@@ -112,4 +112,30 @@ footer {
 
 #subcontainer__submit-button:hover {
   background-color: #000000;
+}
+
+@media screen and (max-width: 1000px) {
+  .app__form {
+    flex-direction: column;
+  }
+
+  .app__wrapper_info {
+    align-items: center;
+  }
+
+  .app__form-subcontainer {
+    margin-left: 0px;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+  .app__form {
+    align-items: stretch;
+  }
+
+  .app__wrapper_info,
+  .app__form-subcontainer {
+    width: 100%; /* Make both the form and subcontainer take full width */
+  }
 }
