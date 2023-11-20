@@ -7,7 +7,8 @@ import {Home} from "./Pages/Home/home.js";
 import {Plans} from "./Pages/Plans/plans.js";
 import {LoginPage} from "./Pages/Login/loginPage.js";
 import { SignUpForm } from './Pages/Login/signUpForm.js';
-import {Form} from "./Components/Form/Form.js";
+import {Leanform} from "./Components/Form/leanForm.js";
+import {Bulkform} from "./Components/Form/bulkForm.js";
 
 const App = () => {
 
@@ -19,7 +20,8 @@ const App = () => {
           <Route path="plans" element={<Plans/>} />
           <Route path="login" element={<LoginPage/>} />
           <Route path="signup" element={<SignUpForm/>} />
-          <Route path="form" element={<Form />} />
+          <Route path="leanform" element={<Leanform />} />
+          <Route path="bulkform" element={<Bulkform />} />
         </Routes>
       </div>
   );

@@ -91,15 +91,15 @@
 }
 
 .gallery__arrow-icon {
-  color: var(--color-golden);
+  color: orangered;
   font-size: 2rem;
   cursor: pointer;
-  background: var(--color-black);
+  background: var(--color-white);
   border-radius: 5px;
 }
 
 .gallery__arrow-icon:hover {
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 @media screen and (min-width: 2000px) {

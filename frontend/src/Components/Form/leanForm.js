@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import * as yup from 'yup';
 import './form.css';
 import axios from 'axios';
@@ -19,11 +19,11 @@ const initialFormErrors = {
     sauce: '',
   };
   
-export const Form = () => {
+export const Leanform = () => {
     const [formValues, setFormValues] = useState(initialFormValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
-    const [subcontainerContent, setSubcontainerContent] = useState('');
     const [orderCount, setOrderCount] = useState(0);
+    const [totalAmount, setTotalAmount] = useState(0);
     const [orders, setOrders] = useState([]);
   
     const handleChange = (e) => {
@@ -46,6 +46,7 @@ export const Form = () => {
       document.getElementById("form").reset();
       setFormValues(initialFormValues);
       setOrderCount((prevCount) => prevCount + 1);
+      setTotalAmount((prevAmount) => prevAmount + 9.99);
     };    
 
     const handleOrderSubmit = async () => {
@@ -59,15 +60,11 @@ export const Form = () => {
               sauce: null,
             });
             setOrderCount(0);
+            setTotalAmount(0);
       } catch (err) {
         console.log(err);
       }
     };
-
-    useEffect(() => {
-      const content = `${formValues.protein || ''} ${formValues.carb || ''} ${formValues.veggie || ''}`;
-      setSubcontainerContent(content);
-    }, [formValues.protein, formValues.carb, formValues.veggie, formValues.sauce]);
     
     return (
       <div className="app__form">
@@ -130,7 +127,7 @@ export const Form = () => {
               </li>
             ))}
           </ul>
-          <h2 className="subcontainer-total"> Order Count: {orderCount}</h2>
+          <h2 className="subcontainer-total"> Total Meals: {orderCount} Amount: ${totalAmount.toFixed(2)} </h2>
           {orderCount >= 5 && (
             <button
               id="subcontainer__submit-button"
