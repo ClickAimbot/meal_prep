@@ -6,7 +6,7 @@ import {Navbar} from "./Components/Navbar/navbar.js";
 import {Home} from "./Pages/Home/home.js";
 import {Plans} from "./Pages/Plans/plans.js";
 import {LoginPage} from "./Pages/Login/loginPage.js";
-import { SignUpForm } from './Pages/Login/signUpForm.js';
+import {SignUpForm} from './Pages/Login/signUpForm.js';
 import {Leanform} from "./Components/Form/leanForm.js";
 import {Bulkform} from "./Components/Form/bulkForm.js";
 
